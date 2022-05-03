@@ -9,48 +9,52 @@ class Program
 {
     public static void Main(string[] args)
     {
-        string date;
-        int day;
+        int date;
+        int age;
 
         Console.WriteLine("What will the price of the museum admisson be?");
         Console.WriteLine("");
 
-        void admission()
+        void admissionday()
         {
-            Console.WriteLine("Enter the day");
+            Console.WriteLine("Please enter the day");
             Console.WriteLine("");
-            Console.WriteLine("Sunday");
-            Console.WriteLine("Monday");
-            Console.WriteLine("Tuesday");
-            Console.WriteLine("Wednesday");
-            Console.WriteLine("Thursday");
-            Console.WriteLine("Friday (T)");
-            Console.WriteLine("Saturday");
-            date = Console.ReadLine();
+            Console.WriteLine("1 - Sunday");
+            Console.WriteLine("2 - Monday");
+            Console.WriteLine("3 - Tuesday");
+            Console.WriteLine("4 - Wednesday");
+            Console.WriteLine("5 - Thursday");
+            Console.WriteLine("6 - Friday");
+            Console.WriteLine("7 - Saturday");
+            date = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("");
-            Console.WriteLine("Enter your age");
-            age = Console.ReadLine();
-
-            if (date == "Adult")
+            if (date > 7 || date < 1)
             {
-                Console.WriteLine("You can see a R rated movie alone.");
-            }
-            else if (ageGroup == "Teen")
-            {
-                Console.WriteLine("You can see a PG-13 rated movie alone.");
-            }
-            else if (ageGroup == "Child")
-            {
-                Console.WriteLine("You can see a G or PG rated movie alone.");
-            }
-            else
-            {
-                Console.WriteLine("You are too young too watch a movie alone. Sorry!");
+                Console.Clear();
+                Console.WriteLine("Please input a valid date");
+                admissionday ();
             }
         }
 
-        movieTypes();
+        void admissionage()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Please enter your age:");
+            age = Convert.ToInt32(Console.ReadLine());
+        }
+
+        admissionday();
+        admissionage();
+
+        if ((date == 3 || date == 5) && (age > 12 && age < 21))
+        {
+            Console.WriteLine("You are eligible for student pricing!");
+        }
+        else
+        {
+            Console.WriteLine("You must pay regular price.");
+        }
+
         Console.WriteLine("\nDone.");
     }
 }
