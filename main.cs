@@ -12,7 +12,7 @@ class Program
         int date;
         int age;
 
-        Console.WriteLine("What will the price of the museum admisson be?");
+        Console.WriteLine("What will the price of the museum admission be?");
         Console.WriteLine("");
 
         void admissionday()
