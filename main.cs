@@ -32,7 +32,7 @@ class Program
             {
                 Console.Clear();
                 Console.WriteLine("Please input a valid date");
-                admissionday ();
+                admissionday();
             }
         }
 
